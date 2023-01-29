@@ -1,0 +1,19 @@
+I understood the problem so that once the class was used to make an object,
+the path and parameters would be set so that they are not changeable unless
+the entire URI would be changed. If the given URI is invalid, the path and/or
+parameters are assigned to null. If parameters are assigned to null, the URI is
+invalid.
+
+Quite early on in implementing the class, I realized that if I hard-coded the given
+scheme, paths, and requirements to the class itself, it would be afterwards very
+inconvenient to change them. So I decided to write all of them to a configuration
+file that would be easy to change. I also made it easy to add different types of
+requirements later.
+
+Another challenge was that I wasn't sure what kind of example the client was asked
+here. Node.js server or a web application didn't seem to be what was intended. So
+I just made some test cases that show that the class works.
+
+Currently, the class doesn't give any feedback on what was the problem if the
+URI was invalid. Return values could indicate for example what was wrong with
+the parameters.
